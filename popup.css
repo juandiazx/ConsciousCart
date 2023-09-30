@@ -1,0 +1,61 @@
+:root {
+    --main-color: #06B666;
+}
+
+html {
+    width: 300px;
+    height: 400px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+html, body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: white;
+    font-weight: 500;
+}
+
+#scrape_button {
+    display: flex;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    transition: all .5s ease;
+}
+
+#scrape_button:hover {
+    background-color: #079c59;
+}
+
+header {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner-popup {
+    margin-top: 0.55rem;
+    margin-left: 0.55rem;
+    margin-bottom: 0.25rem;
+    width: 165px;
+    height: 42px;
+}
+
+#close-button {
+    font-size: 2rem;
+    color: rgba(120, 113, 108,0.8);
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
