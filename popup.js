@@ -72,29 +72,60 @@ function generateProgressBars(percentagesArray) {
 // DOM Elements
 const homeButton = document.getElementById('home-button');
 const pasteButton = document.getElementById('search-button');
-const homeContainer = document.getElementById('home-container');
+const homeContainer = document.getElementById("container-progress-bars");
 const insertTextContainer = document.getElementById('insert-text-container');
+const button = document.getElementById("container-button").querySelector("div")
 
 // Initial View
-homeContainer.style.display = 'block';
+homeContainer.style.display = 'flex';
 insertTextContainer.style.display = 'none';
 
 // Button Click Handlers
 homeButton.addEventListener('click', () => {
-  homeContainer.style.display = 'block';
+  homeContainer.style.display = 'flex';
   insertTextContainer.style.display = 'none';
-  pasteButton.querySelector("i").classList.remove("active-icon")
-  pasteButton.querySelector("i").classList.add("inactive-icon")
-  homeButton.querySelector("i").classList.add("active-icon")
-  homeButton.querySelector("i").classList.remove("inactive-icon")
+  button.id = "scrape_button"
+  button.querySelector("p") = "Check it now"
+  var h1Element = document.querySelector('#home-container h1');
+
+    // Check if the h1 element exists
+    if (h1Element) {
+        // Create a new span element
+        var newSpan = document.createElement('span');
+        newSpan.className = 'bold-words'; // Apply the same class as the existing span elements
+        newSpan.textContent = 'social';
+
+        // Create another new span element
+        var anotherNewSpan = document.createElement('span');
+        anotherNewSpan.className = 'bold-words'; // Apply the same class as the existing span elements
+        anotherNewSpan.textContent = 'environmental';
+
+        // Replace the content of the h1 element with the new spans and text
+        h1Element.innerHTML = 'Automatically checks the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of your current online product';
+    }
 });
 
 pasteButton.addEventListener('click', () => {
   homeContainer.style.display = 'none';
-  insertTextContainer.style.display = 'block';
-  pasteButton.querySelector("i").classList.add("active-icon")
-  pasteButton.querySelector("i").classList.remove("inactive-icon")
-  homeButton.querySelector("i").classList.remove("active-icon")
-  homeButton.querySelector("i").classList.add("inactive-icon")
+  insertTextContainer.style.display = 'flex';
+  button.id = "check_text_button"
+  button.querySelector("p") = "Check description"
+  var h1Element = document.querySelector('#home-container h1');
+
+    // Check if the h1 element exists
+    if (h1Element) {
+        // Create a new span element
+        var newSpan = document.createElement('span');
+        newSpan.className = 'bold-words'; // Apply the same class as the existing span elements
+        newSpan.textContent = 'social';
+
+        // Create another new span element
+        var anotherNewSpan = document.createElement('span');
+        anotherNewSpan.className = 'bold-words'; // Apply the same class as the existing span elements
+        anotherNewSpan.textContent = 'environmental';
+
+        // Replace the content of the h1 element with the new spans and text
+        h1Element.innerHTML = 'Check the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of any online product description';
+    }
 });
 //-----------------------------------------------------------------------
