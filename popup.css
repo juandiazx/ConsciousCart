@@ -21,15 +21,16 @@ html, body {
 p {
     color: white;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 #scrape_button {
     display: flex;
-    border-radius: 6px;
+    border-radius: 120px;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 30px;
+    width: 180px;
+    height: 45px;
     cursor: pointer;
     background-color: var(--main-color);
     transition: all .5s ease;
@@ -83,10 +84,69 @@ header {
 }
 
 #container-progress-bars{
+    margin: 2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
 
+#container-button {
+    display: flex;
+    justify-content: center;
+}
   
+#insert-text-container {
+    display: none;
+}
+
+#home-container {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 1rem;
+}
+
+.bold-words{
+    font-weight: 700;
+}
+
+#bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: rgba(250, 250, 249,0.9);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e5e7eb;
+}
+
+#bottom-nav div {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.progress-ring-circle-grey {
+    fill: #e9e9e9d1; /* Grey color for the background circle */
+    transition: fill 0.7s; /* Transition effect for color change */
+}
+
+
+.active-icon {
+    color: rgb(0, 0, 0);
+}
+
+.inactive-icon{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.inactive-icon:hover{
+    color: rgba(0, 0, 0,0.7);
+}

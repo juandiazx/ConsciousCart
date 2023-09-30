@@ -21,30 +21,49 @@
         <img src="icons/banner-popup.png" class="banner-popup">
         <i class="bi bi-x" id="close-button"></i>
     </header>
+    <div id="home-container">
+        <h1>Check the <span class="bold-words">social</span> and <span class="bold-words">environmental</span> score of your favorite products</h1>
+            
+        <!--Progress Bars-->
+        <div id="container-progress-bars">
+            <svg id="first-progress" class="progress-ring" width="90" height="90">
+                <!-- Colored progress bar -->
+                <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
+                <!-- Grey background circle -->
+                <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
+                <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
+            </svg>
+            <svg id="second-progress" class="progress-ring" width="90" height="90">
+                <!-- Colored progress bar -->
+                <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
+                <!-- Grey background circle -->
+                <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
+                
+                <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
+            </svg> 
+        </div>
 
-    <div id="scrape_button">
-        <p>Scrape now</p>
+        <div id="container-button">
+            <div id="scrape_button">
+                <p>Get conscious score</p>
+            </div>
     </div>
-
-    <!--Progress Bars-->
-    <div id="container-progress-bars">
-        <svg id="first-progress" class="progress-ring" width="90" height="90">
-            <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
-            <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
-        </svg>
-        <svg id="second-progress" class="progress-ring" width="90" height="90">
-            <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
-            <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
-        </svg>
-        <svg id="third-progress" class="progress-ring" width="90" height="90">
-            <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
-            <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
-        </svg>
-        
-    </div>
-    
       
     <div id="result"></div>
+    </div>
+    <div id="insert-text-container">
+
+    </div>
+
+    <!--NAV Permanent-->
+    <nav id="bottom-nav">
+        <div id="home-button">
+            <i class="bi bi-house-door active-icon"></i> <!-- Bootstrap Icons home icon -->
+        </div>
+        <div id="search-button">
+            <i class="bi bi-clipboard inactive-icon"></i> <!-- Bootstrap Icons paste icon -->
+        </div>
+    </nav>
     <script src="popup.js"></script>
 </body>
 </html>

@@ -35,15 +35,18 @@ document.getElementById("close-button").addEventListener('click',function () {
 })
 //-----------------------------------------------------------------------
 
+//When popup loaded generate the progress bars
+//-----------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  let arrayInPercentages = [60,15,95]
+  let arrayInPercentages = [60,15]
   generateProgressBars(arrayInPercentages)
 });
+//-----------------------------------------------------------------------
 
 //   percentage:List<Integer> -----> generateProgressBars() ---->Generates the 3 main progress bars
 function generateProgressBars(percentagesArray) {
-  let arrayIds = ["first-progress", "second-progress", "third-progress"]
-  for (let i = 0; i < 3; i++){
+  let arrayIds = ["first-progress", "second-progress"]
+  for (let i = 0; i < 2; i++){
     let circle = document.getElementById(arrayIds[i]).querySelector('circle');
     let percentText = document.getElementById(arrayIds[i]).querySelector('text');
 
@@ -61,4 +64,37 @@ function generateProgressBars(percentagesArray) {
     percentText.textContent = `${percentagesArray[i]}%`;
   }
 }
+//-----------------------------------------------------------------------
 
+
+//Handle bottom navigation
+//-----------------------------------------------------------------------
+// DOM Elements
+const homeButton = document.getElementById('home-button');
+const pasteButton = document.getElementById('search-button');
+const homeContainer = document.getElementById('home-container');
+const insertTextContainer = document.getElementById('insert-text-container');
+
+// Initial View
+homeContainer.style.display = 'block';
+insertTextContainer.style.display = 'none';
+
+// Button Click Handlers
+homeButton.addEventListener('click', () => {
+  homeContainer.style.display = 'block';
+  insertTextContainer.style.display = 'none';
+  pasteButton.querySelector("i").classList.remove("active-icon")
+  pasteButton.querySelector("i").classList.add("inactive-icon")
+  homeButton.querySelector("i").classList.add("active-icon")
+  homeButton.querySelector("i").classList.remove("inactive-icon")
+});
+
+pasteButton.addEventListener('click', () => {
+  homeContainer.style.display = 'none';
+  insertTextContainer.style.display = 'block';
+  pasteButton.querySelector("i").classList.add("active-icon")
+  pasteButton.querySelector("i").classList.remove("inactive-icon")
+  homeButton.querySelector("i").classList.remove("active-icon")
+  homeButton.querySelector("i").classList.add("inactive-icon")
+});
+//-----------------------------------------------------------------------
