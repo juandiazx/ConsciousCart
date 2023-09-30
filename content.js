@@ -1,7 +1,25 @@
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+//content.js
+
+// Receives scrape request from popup.js, scrapes data from DOM and sends data to background.js
+//-----------------------------------------------------------------------
+//    <----------- JSON{action:"scrapeData"} <----- popup.js
+// ()
+//    -------------> JSON{
+//                          action: "processData",
+//                          data:JSON{
+//                                      title:textContent
+//                                      title:textContent
+//                                      title:textContent
+//                                      title:textContent
+//                                      title:textContent
+//                                   }
+//                      }
+//-----------------------------------------------------------------------
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === 'scrapeData') {
       const data = {
-        h1Content: document.getElementById('productTitle').textContent
+          title: document.getElementById('productTitle').textContent,
+          about: document.getElementById('feature-bullets').textContent
       };
       chrome.runtime.sendMessage({ action: 'processData', data: data });
     }

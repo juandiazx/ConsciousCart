@@ -1,26 +1,12 @@
-/*chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  // Handle API request here, send data to your API endpoint
-  // For example:
-  // fetch('http://your-api-endpoint.com/', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(request.data)
-  // })
-  // .then(response => response.json())
-  // .then(data => {
-  //   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-  //     chrome.tabs.sendMessage(tabs[0].id, { action: 'showData', data: data });
-  //   });
-  // });
-});*/
-
+//background.js
 
 chrome.runtime.onMessage.addListener(async function(request, sender, sendResponse) {
   if (request.action === 'processData') {
     try {
-      const title = request.data.h1Content;
+      const data = {
+        title: request.data.title,
+        about: request.data.about
+    };
       /*
       const response = await fetch('https://your-api-endpoint.com', {
         method: 'POST',
@@ -35,7 +21,7 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
         // Send the response back to the popup
         
       } else {*/
-      await chrome.runtime.sendMessage({action:"showDataFinal",data: title});
+      await chrome.runtime.sendMessage({action:"showDataFinal",data: data});
       //}
     } catch (error) {
       console.error(error);

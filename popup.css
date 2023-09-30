@@ -3,8 +3,8 @@
 }
 
 html {
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
 }
 body {
     display: flex;
@@ -59,3 +59,34 @@ header {
     margin-right: 0.5rem;
     cursor: pointer;
 }
+
+.progress-ring {
+    transform: rotate(-90deg);
+  }
+  
+  .progress-ring-circle {
+    fill: transparent;
+    stroke: var(--main-color); /* Change the color of the progress bar */
+    stroke-width: 10;
+    stroke-dasharray: 314; /* 2 * pi * radius */
+    stroke-dashoffset: 314;
+    transition: stroke-dashoffset 1s;
+  }
+  
+
+  .progress-ring-text {
+    font-size: 15px; /* Adjust the font size as needed */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-anchor: middle;
+    transform: translateX(100%) rotate(90deg); /* Adjust vertical position and rotation */
+}
+
+#container-progress-bars{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+  
