@@ -4,7 +4,7 @@
 
 html {
     width: 400px;
-    height: 500px;
+    height: 440px;
 }
 body {
     display: flex;
@@ -149,4 +149,16 @@ h1 {
 
 .inactive-icon:hover{
     color: rgba(0, 0, 0,0.7);
+}
+
+.progress-tag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.progress-tag>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.3rem;
 }

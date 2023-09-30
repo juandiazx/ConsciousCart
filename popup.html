@@ -22,25 +22,39 @@
         <i class="bi bi-x" id="close-button"></i>
     </header>
     <div id="home-container">
-        <h1>Check the <span class="bold-words">social</span> and <span class="bold-words">environmental</span> score of your favorite products</h1>
+        <h1>Check the <span class="bold-words">social</span> and <span class="bold-words">environmental</span> score of your current online product</h1>
             
         <!--Progress Bars-->
         <div id="container-progress-bars">
-            <svg id="first-progress" class="progress-ring" width="90" height="90">
-                <!-- Colored progress bar -->
-                <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
-                <!-- Grey background circle -->
-                <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
-                <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
-            </svg>
-            <svg id="second-progress" class="progress-ring" width="90" height="90">
-                <!-- Colored progress bar -->
-                <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
-                <!-- Grey background circle -->
-                <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
-                
-                <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
-            </svg> 
+            <div class="progress-container">
+                <svg id="first-progress" class="progress-ring" width="90" height="90">
+                    <!-- Colored progress bar -->
+                    <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
+                    <!-- Grey background circle -->
+                    <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
+                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
+                </svg>
+                <!-- Tag below the circular progress bar -->
+                <div class="progress-tag">
+                    <img src="icons/seedling-solid.svg">
+                    <h3>Environmental</h3>
+                </div>
+            </div>
+            <div class="progress-container">
+                <svg id="second-progress" class="progress-ring" width="90" height="90">
+                    <!-- Colored progress bar -->
+                    <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
+                    <!-- Grey background circle -->
+                    <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
+                    
+                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
+                </svg> 
+                <!-- Tag below the circular progress bar -->
+                <div class="progress-tag">
+                    <img src="icons/people-group-solid.svg">
+                    <h3>Social</h3>
+                </div>
+            </div>
         </div>
 
         <div id="container-button">
