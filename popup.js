@@ -5,7 +5,7 @@
 // ()------>JSON{action:"scrapeData"} -----> content.js
 //-----------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('scrape_button').addEventListener('click', function () {
+  document.getElementById('scrape_button_1').addEventListener('click', function () {
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, { action: 'scrapeData' });
@@ -14,13 +14,40 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// When button check text pressed, send description text to background.js
+//-----------------------------------------------------------------------
+// ()------>JSON{action:"processDataDescription",} -----> background.js
+//-----------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('scrape_button_2"').addEventListener('click', function () {
 
-// background.js sends processed scores to popup.js
+    const data = {
+      description: document.getElementById('multiline-input').value,
+    };
+  chrome.runtime.sendMessage({ action: 'processDataDescription', data: data });
+
+  });
+});
+
+
+// background.js sends scraped processed scores to popup.js
 //-----------------------------------------------------------------------
 // ()<----------- JSON{action:"showDataFinal", data:JSON{title,about}} <----- background.js
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'showDataFinal') {
+    const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
+    document.getElementById('result').textContent = resultText;
+  }
+});
+//-----------------------------------------------------------------------
+
+// background.js sends description processed scores to popup.js
+//-----------------------------------------------------------------------
+// ()<----------- JSON{action:"showDataFinal", data:JSON{title,about}} <----- background.js
+//-----------------------------------------------------------------------
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === 'showDataFinalDescription') {
     const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
     document.getElementById('result').textContent = resultText;
   }
@@ -75,7 +102,9 @@ const homeButton = document.getElementById('home-button');
 const pasteButton = document.getElementById('search-button');
 const homeContainer = document.getElementById("container-progress-bars-1");
 const insertTextContainer = document.getElementById("second-switch-container");
-const button = document.getElementById("container-button").querySelector("div")
+
+const button1 = document.getElementById("container-button-1")
+const button2 = document.getElementById("container-button-2")
 
 // Initial View
 homeContainer.style.display = 'flex';
@@ -85,10 +114,9 @@ insertTextContainer.style.display = 'none';
 homeButton.addEventListener('click', () => {
   homeContainer.style.display = 'flex';
   insertTextContainer.style.display = 'none';
-  button.id = "scrape_button"
-  button.querySelector("p").textContent = "Check product"
   var h1Element = document.querySelector('#home-container h1');
-  document.getElementById("container-button").style.marginBottom = "0"
+  button1.style.display = "flex"
+  button2.style.display = "none"
 
     // Check if the h1 element exists
     if (h1Element) {
@@ -112,10 +140,9 @@ homeButton.addEventListener('click', () => {
 pasteButton.addEventListener('click', () => {
   homeContainer.style.display = 'none';
   insertTextContainer.style.display = 'flex';
-  button.id = "check_text_button"
-  button.querySelector("p").textContent = "Check text"
   var h1Element = document.querySelector('#home-container h1');
-  document.getElementById("container-button").style.marginBottom = "2rem"
+  button2.style.display = "flex"
+  button1.style.display = "none"
 
     // Check if the h1 element exists
     if (h1Element) {

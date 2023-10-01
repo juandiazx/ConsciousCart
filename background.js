@@ -57,17 +57,17 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
 //-----------------------------------------------------------------------
 
 
-// Receives processDescription request from popup.js, sends data to API, receives and sends to popup.js
+// Receives processDataDescription request from popup.js, sends data to API, receives and sends to popup.js
 //-----------------------------------------------------------------------
 //    <----------- JSON{
-//                          action: "processData",
+//                          action: "processDataDescription",
 //                          data:JSON{
 //                                      description:String    <----- popup.js
 //                                   }
 //                      }
 // ()
 //    -------------> JSON{
-//                          action: "showDataFinal",
+//                          action: "showDataFinalDescription",
 //                          data:JSON{
 //                                      sent_score:Float -------> popup.js
 //                                      bio_score:Float
@@ -78,11 +78,10 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
 //                      }
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(async function(request, sender, sendResponse) {
-  if (request.action === 'processData') {
+  if (request.action === 'processDataDescription') {
     try {
       const data = {
-        title: request.data.title,
-        about: request.data.about
+        description: request.data.description,
       };
 
       const response = await fetch(apiUrl, {
@@ -95,7 +94,7 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
 
       if (response.ok) {
         const responseData = await response.json();
-        await chrome.runtime.sendMessage({action: "showDataFinal", data: responseData});
+        await chrome.runtime.sendMessage({action: "showDataFinalDescription", data: responseData});
       } else {
         console.error("Error fetching data from Flask server:", await response.text());
       }

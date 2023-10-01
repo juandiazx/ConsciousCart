@@ -24,7 +24,7 @@ p {
     font-size: 1rem;
 }
 
-#scrape_button {
+#scrape_button_1 {
     display: flex;
     border-radius: 120px;
     justify-content: center;
@@ -36,17 +36,17 @@ p {
     transition: all .5s ease;
 }
 
-#scrape_button:hover {
+#scrape_button_1:hover {
     background-color: #079c59;
 }
 
-#scrape_button>i {
+#scrape_button_1>i {
     margin-left: 0.5rem;
     font-size: 1rem;
     color: white;
 }
 
-#check_text_button {
+#scrape_button_2 {
     display: flex;
     border-radius: 120px;
     justify-content: center;
@@ -58,11 +58,11 @@ p {
     transition: all .5s ease;
 }
 
-#check_text_button:hover {
+#scrape_button_2:hover {
     background-color: #079c59;
 }
 
-#check_text_button>i {
+#scrape_button_2>i {
     margin-left: 0.5rem;
     font-size: 1rem;
     color: white;
@@ -137,9 +137,14 @@ header {
     width: 100%;
 }
 
-#container-button {
+#container-button-1 {
     display: flex;
     justify-content: center;
+}
+#container-button-2 {
+    display: none;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 #home-container {
@@ -225,7 +230,7 @@ h1 {
     flex: 1;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all .5s ease;
     font-size: 0.8rem;
     font-weight: 500;
     align-items: center;
