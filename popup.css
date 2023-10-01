@@ -4,7 +4,7 @@
 
 html {
     width: 400px;
-    height: 440px;
+    height: 450px;
 }
 body {
     display: flex;
@@ -38,6 +38,34 @@ p {
 
 #scrape_button:hover {
     background-color: #079c59;
+}
+
+#scrape_button>i {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+#check_text_button {
+    display: flex;
+    border-radius: 120px;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 45px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    transition: all .5s ease;
+}
+
+#check_text_button:hover {
+    background-color: #079c59;
+}
+
+#check_text_button>i {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    color: white;
 }
 
 header {
@@ -84,7 +112,7 @@ header {
 }
 
 #container-progress-bars{
-    margin: 2rem;
+    margin: 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -138,19 +166,6 @@ h1 {
     transition: fill 0.7s; /* Transition effect for color change */
 }
 
-
-.active-icon {
-    color: rgb(0, 0, 0);
-}
-
-.inactive-icon{
-    color: rgba(0, 0, 0, 0.4);
-}
-
-.inactive-icon:hover{
-    color: rgba(0, 0, 0,0.7);
-}
-
 .progress-tag{
     display: flex;
     flex-direction: row;
@@ -161,4 +176,39 @@ h1 {
     width: 20px;
     height: 20px;
     margin-right: 0.3rem;
+}
+
+#bottom-nav img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 24.5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none; /* Disable textarea resizing */
+}
+
+.form-input:focus {
+    outline: none;
+    border: 2px var(--main-color) solid;
 }

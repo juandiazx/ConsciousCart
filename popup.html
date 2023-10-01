@@ -22,7 +22,7 @@
         <i class="bi bi-x" id="close-button"></i>
     </header>
     <div id="home-container">
-        <h1>Check the <span class="bold-words">social</span> and <span class="bold-words">environmental</span> score of your current online product</h1>
+        <h1>Automatically checks the <span class="bold-words">social</span> and <span class="bold-words">environmental</span> score of your current online product</h1>
             
         <!--Progress Bars-->
         <div id="container-progress-bars">
@@ -57,25 +57,32 @@
             </div>
         </div>
 
+        <div id="insert-text-container">
+            <div class="form-container">
+                <div class="form-group">
+                    <textarea id="multiline-input" class="form-input" rows="4" placeholder="Enter product description here..."></textarea>
+                </div>
+                <!-- Add more form fields and buttons as needed -->
+            </div>
+        </div>
+
         <div id="container-button">
             <div id="scrape_button">
-                <p>Get conscious score</p>
+                <p>Check product</p>
+                <i class="bi bi-patch-check"></i>
             </div>
-    </div>
+        </div>
       
-    <div id="result"></div>
-    </div>
-    <div id="insert-text-container">
-
+        <div id="result"></div>
     </div>
 
     <!--NAV Permanent-->
     <nav id="bottom-nav">
         <div id="home-button">
-            <i class="bi bi-house-door active-icon"></i> <!-- Bootstrap Icons home icon -->
+            <img src="icons/wand-magic-sparkles-solid.svg">
         </div>
         <div id="search-button">
-            <i class="bi bi-clipboard inactive-icon"></i> <!-- Bootstrap Icons paste icon -->
+            <img src="icons/copy-solid.svg">
         </div>
     </nav>
     <script src="popup.js"></script>
