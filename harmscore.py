@@ -31,7 +31,8 @@ excluded_materials = {
     "semustine", "shale", "silica",  "soot", "sulfur", "talc", "asbestiform", "tamoxifen", 
     "tetrachlorodibenzo", "thiotepa", "thorium", "tobacco", "ortho", "toluidine", "treosulfan", 
     "trichloroethylene", "uvradiation", "tanning", 
-    "chloride", "fumes", "woodchip"
+    "chloride", "fumes", "woodchip", "bleach", "insecticisde", "pesticide", "kill", "killer",
+    "killing", "damage", "damaging", "poison", "poisonous", "poisoning", "harm", "harmful", "harmfulness"
 }
 def calculate_normalized_harmfulness_score_and_list_materials(
     text: str, 

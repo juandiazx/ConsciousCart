@@ -37,6 +37,8 @@ bio_friendly_materials_set = {
     "land", "earth", "nature", "outdoor", "wild", "free", "life", "living", "alive", "grow", 
     "evolve", "adapt", "flourish", "thrive", "prosper", "blossom", "bloom", "regenerate", 
     "rejuvenate", "renew", "restore", "revitalize", "refresh", "revive", "recover", "heal", 
+    "gluten free", "gmo", "fair trade", "healthy", "life", "oxygen", "vitamin", "vitamins",
+    "nutrient", "nutrients", "health", "wellness", "wellbeing"
 }
 def calculate_normalized_good_score_and_list_materials(
     text: str, 
