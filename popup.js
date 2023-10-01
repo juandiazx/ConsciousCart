@@ -85,7 +85,7 @@ homeButton.addEventListener('click', () => {
   homeContainer.style.display = 'flex';
   insertTextContainer.style.display = 'none';
   button.id = "scrape_button"
-  button.querySelector("p") = "Check it now"
+  button.querySelector("p").textContent = "Check product"
   var h1Element = document.querySelector('#home-container h1');
 
     // Check if the h1 element exists
@@ -109,7 +109,7 @@ pasteButton.addEventListener('click', () => {
   homeContainer.style.display = 'none';
   insertTextContainer.style.display = 'flex';
   button.id = "check_text_button"
-  button.querySelector("p") = "Check description"
+  button.querySelector("p").textContent = "Check text"
   var h1Element = document.querySelector('#home-container h1');
 
     // Check if the h1 element exists
