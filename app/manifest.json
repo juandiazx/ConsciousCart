@@ -11,23 +11,17 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://www.walmart.com/*"],
-          "js": ["content.js"]
-        },
-        {
           "matches": ["https://www.amazon.com/*"],
           "js": ["content.js"]
         }
       ],
       "host_permissions": [
-        "https://*.amazon.com/",
-        "https://*.walmart.com/"
+        "https://*.amazon.com/"
       ],
     "permissions": [
         "activeTab",
         "storage",
-        "tabs",
-        "http://127.0.0.1:5000/"
+        "tabs"
       ],
     "action": {
       "default_popup": "popup.html",

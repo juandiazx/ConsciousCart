@@ -19,11 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // ()------>JSON{action:"processDataDescription",} -----> background.js
 //-----------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('scrape_button_2"').addEventListener('click', function () {
+  document.getElementById("scrape_button_2").addEventListener('click', function () {
 
     const data = {
       description: document.getElementById('multiline-input').value,
     };
+    console.log(data.description)
   chrome.runtime.sendMessage({ action: 'processDataDescription', data: data });
 
   });
@@ -48,7 +49,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'showDataFinalDescription') {
-    const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
+    //const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
+    const resultText = request.data.description
     document.getElementById('result').textContent = resultText;
   }
 });
