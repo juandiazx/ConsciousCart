@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'showDataFinal') {
-    const resultText = `Environmental Score: ${request.data.env_score}, Health Score: ${request.data.safety_score}`
-    document.getElementById('result').textContent = resultText;
     generateProgressBars([request.data.env_score, request.data.safety_score],["first-progress-1", "second-progress-1"])
   }
 });
@@ -49,9 +47,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'showDataFinalDescription') {
-    //const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
-    const resultText = `Environmental Score: ${request.data.env_score}, Health Score: ${request.data.safety_score}`
-    document.getElementById('result').textContent = resultText;
     generateProgressBars([request.data.env_score, request.data.safety_score],["first-progress-2", "second-progress-2"])
   }
 });
