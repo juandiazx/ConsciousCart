@@ -1,4 +1,11 @@
 import re
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 excluded_materials = {
     "acetaldehyde", "acheson", "acid", "aflatoxins", "alcoholic", 
@@ -31,8 +38,13 @@ def calculate_normalized_harmfulness_score_and_list_materials(
     harmful_materials_count_threshold: int = 5,
 ):
     words = re.findall(r'\b\w+\b', text.lower())
+    stop_words = set(stopwords.words('english'))
+    lemmatizer = WordNetLemmatizer()
+    processed_words = [lemmatizer.lemmatize(word) for word in words if word not in stop_words]
+
     allchemicals = set()
-    for word in words:
+
+    for word in processed_words:
         if word in excluded_materials:
             allchemicals.add(word)            
     
