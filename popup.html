@@ -22,47 +22,104 @@
         <i class="bi bi-x" id="close-button"></i>
     </header>
     <div id="home-container">
+        <div id="big-container-switch">
+            <div class="button-container">
+                <div class="button button-left active" id="home-button">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16">
+                            <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
+                            <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="button button-right" id="search-button">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                            <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>   
+        </div>
         <h1>Automatically checks the <span class="bold-words">social</span> and <span class="bold-words">environmental</span> score of your current online product</h1>
-            
+        
+        
+        
         <!--Progress Bars-->
-        <div id="container-progress-bars">
+        <div id="container-progress-bars-1">
             <div class="progress-container">
-                <svg id="first-progress" class="progress-ring" width="90" height="90">
+                <svg id="first-progress-1" class="progress-ring" width="90" height="90">
                     <!-- Colored progress bar -->
                     <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
                     <!-- Grey background circle -->
                     <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
-                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
+                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">0%</text>
                 </svg>
                 <!-- Tag below the circular progress bar -->
                 <div class="progress-tag">
-                    <img src="icons/seedling-solid.svg">
+                    <!--<img src="icons/seedling-solid.svg">-->
                     <h3>Environmental</h3>
                 </div>
             </div>
             <div class="progress-container">
-                <svg id="second-progress" class="progress-ring" width="90" height="90">
+                <svg id="second-progress-1" class="progress-ring" width="90" height="90">
                     <!-- Colored progress bar -->
                     <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
                     <!-- Grey background circle -->
                     <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
                     
-                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">75%</text>
+                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">0%</text>
                 </svg> 
                 <!-- Tag below the circular progress bar -->
                 <div class="progress-tag">
-                    <img src="icons/people-group-solid.svg">
+                    <!--<img src="icons/people-group-solid.svg">-->
                     <h3>Social</h3>
                 </div>
             </div>
         </div>
 
-        <div id="insert-text-container">
-            <div class="form-container">
-                <div class="form-group">
-                    <textarea id="multiline-input" class="form-input" rows="4" placeholder="Enter product description here..."></textarea>
+
+        <div id="second-switch-container">
+            <!--Progress Bars-->
+        <div id="container-progress-bars-2">
+            <div class="progress-container">
+                <svg id="first-progress-2" class="progress-ring" width="90" height="90">
+                    <!-- Colored progress bar -->
+                    <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
+                    <!-- Grey background circle -->
+                    <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
+                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">0%</text>
+                </svg>
+                <!-- Tag below the circular progress bar -->
+                <div class="progress-tag">
+                    <!--<img src="icons/seedling-solid.svg">-->
+                    <h3>Environmental</h3>
                 </div>
-                <!-- Add more form fields and buttons as needed -->
+            </div>
+            <div class="progress-container">
+                <svg id="second-progress-2" class="progress-ring" width="90" height="90">
+                    <!-- Colored progress bar -->
+                    <circle class="progress-ring-circle" cx="45" cy="45" r="40"></circle>
+                    <!-- Grey background circle -->
+                    <circle class="progress-ring-circle-grey" cx="45" cy="45" r="40"></circle>
+                    
+                    <text x="50%" y="50%" class="progress-ring-text" text-anchor="middle" alignment-baseline="middle">0%</text>
+                </svg> 
+                <!-- Tag below the circular progress bar -->
+                <div class="progress-tag">
+                    <!--<img src="icons/people-group-solid.svg">-->
+                    <h3>Social</h3>
+                </div>
+            </div>
+        </div>
+            <div id="insert-text-container">
+                <div class="form-container">
+                    <div class="form-group">
+                        <textarea id="multiline-input" class="form-input" rows="4" placeholder="Enter product description here..."></textarea>
+                    </div>
+                    <!-- Add more form fields and buttons as needed -->
+                </div>
             </div>
         </div>
 
@@ -75,16 +132,6 @@
       
         <div id="result"></div>
     </div>
-
-    <!--NAV Permanent-->
-    <nav id="bottom-nav">
-        <div id="home-button">
-            <img src="icons/wand-magic-sparkles-solid.svg">
-        </div>
-        <div id="search-button">
-            <img src="icons/copy-solid.svg">
-        </div>
-    </nav>
     <script src="popup.js"></script>
 </body>
 </html>

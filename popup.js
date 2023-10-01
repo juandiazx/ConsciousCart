@@ -38,14 +38,12 @@ document.getElementById("close-button").addEventListener('click',function () {
 //When popup loaded generate the progress bars
 //-----------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  let arrayInPercentages = [60,15]
-  generateProgressBars(arrayInPercentages)
+  generateProgressBars([15,70],["first-progress-1", "second-progress-1"])
 });
 //-----------------------------------------------------------------------
 
 //   percentage:List<Integer> -----> generateProgressBars() ---->Generates the 3 main progress bars
-function generateProgressBars(percentagesArray) {
-  let arrayIds = ["first-progress", "second-progress"]
+function generateProgressBars(percentagesArray,arrayIds) {
   for (let i = 0; i < 2; i++){
     let circle = document.getElementById(arrayIds[i]).querySelector('circle');
     let percentText = document.getElementById(arrayIds[i]).querySelector('text');
@@ -56,6 +54,9 @@ function generateProgressBars(percentagesArray) {
 
     // Calculate the dash offset to represent the percentage
     let offset = circumference - (percentagesArray[i] / 100) * circumference;
+
+    // Set the stroke-dasharray property to the full circumference
+    circle.style.strokeDasharray = circumference;
 
     // Set the stroke-dashoffset property to create the progress effect
     circle.style.strokeDashoffset = offset;
@@ -72,8 +73,8 @@ function generateProgressBars(percentagesArray) {
 // DOM Elements
 const homeButton = document.getElementById('home-button');
 const pasteButton = document.getElementById('search-button');
-const homeContainer = document.getElementById("container-progress-bars");
-const insertTextContainer = document.getElementById('insert-text-container');
+const homeContainer = document.getElementById("container-progress-bars-1");
+const insertTextContainer = document.getElementById("second-switch-container");
 const button = document.getElementById("container-button").querySelector("div")
 
 // Initial View
@@ -87,6 +88,7 @@ homeButton.addEventListener('click', () => {
   button.id = "scrape_button"
   button.querySelector("p").textContent = "Check product"
   var h1Element = document.querySelector('#home-container h1');
+  document.getElementById("container-button").style.marginBottom = "0"
 
     // Check if the h1 element exists
     if (h1Element) {
@@ -102,7 +104,9 @@ homeButton.addEventListener('click', () => {
 
         // Replace the content of the h1 element with the new spans and text
         h1Element.innerHTML = 'Automatically checks the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of your current online product';
-    }
+  }
+  //GENERATE BARS
+  generateProgressBars([15,88],["first-progress-1", "second-progress-1"])
 });
 
 pasteButton.addEventListener('click', () => {
@@ -111,6 +115,7 @@ pasteButton.addEventListener('click', () => {
   button.id = "check_text_button"
   button.querySelector("p").textContent = "Check text"
   var h1Element = document.querySelector('#home-container h1');
+  document.getElementById("container-button").style.marginBottom = "2rem"
 
     // Check if the h1 element exists
     if (h1Element) {
@@ -126,6 +131,18 @@ pasteButton.addEventListener('click', () => {
 
         // Replace the content of the h1 element with the new spans and text
         h1Element.innerHTML = 'Check the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of any online product description';
-    }
+  }
+  //GENERATE BARS
+  generateProgressBars([5,45],["first-progress-2", "second-progress-2"])
 });
 //-----------------------------------------------------------------------
+
+
+const buttons = document.querySelectorAll('.button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+});
+

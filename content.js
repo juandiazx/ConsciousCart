@@ -7,11 +7,8 @@
 //    -------------> JSON{
 //                          action: "processData",
 //                          data:JSON{
-//                                      title:textContent
-//                                      title:textContent
-//                                      title:textContent
-//                                      title:textContent
-//                                      title:textContent
+//                                      title:textContent -------> background.js
+//                                      about:textContent
 //                                   }
 //                      }
 //-----------------------------------------------------------------------
