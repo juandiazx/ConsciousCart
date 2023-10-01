@@ -1,5 +1,5 @@
 # ConsciousCart
-Making online shopping more sustainable and humane
+**Making online shopping more sustainable and humane**
 
 To test it on your local machine, download the app folder, go to chrome://extensions/ and upload it.
 
