@@ -13,7 +13,7 @@
 //                      }
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.action === 'scrapeData') {
+  if (request.action === 'scrapeData') {
       const data = {
           title: document.getElementById('productTitle').textContent,
           about: document.getElementById('feature-bullets').textContent
