@@ -68,7 +68,7 @@ document.getElementById("close-button").addEventListener('click',function () {
 //When popup loaded generate the progress bars
 //-----------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  generateProgressBars([15,70],["first-progress-1", "second-progress-1"])
+  generateProgressBars([0,0],["first-progress-1", "second-progress-1"])
 });
 //-----------------------------------------------------------------------
 
@@ -84,7 +84,18 @@ function generateProgressBars(percentagesArray,arrayIds) {
 
     // Calculate the dash offset to represent the percentage
     let offset = circumference - (percentagesArray[i] / 100) * circumference;
+    // Define colors based on percentage
+    let color;
+    if (percentagesArray[i] >= 60) {
+        color = '#4CAF50 !important'; // Green color for >= 60%
+    } else if (percentagesArray[i] >= 20) {
+        color = '#FFC107 !important'; // Orange color for 20% to 60%
+    } else {
+        color = '#FF5722 !important'; // Red color for < 20%
+    }
 
+    // Set the stroke color and dash offset
+    circle.style.stroke = color;
     // Set the stroke-dasharray property to the full circumference
     circle.style.strokeDasharray = circumference;
 
@@ -137,7 +148,7 @@ homeButton.addEventListener('click', () => {
         h1Element.innerHTML = 'Automatically checks the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of your current online product';
   }
   //GENERATE BARS
-  generateProgressBars([15,88],["first-progress-1", "second-progress-1"])
+  generateProgressBars([0,0],["first-progress-1", "second-progress-1"])
 });
 
 pasteButton.addEventListener('click', () => {
@@ -163,7 +174,7 @@ pasteButton.addEventListener('click', () => {
         h1Element.innerHTML = 'Check the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of any online product description';
   }
   //GENERATE BARS
-  generateProgressBars([5,45],["first-progress-2", "second-progress-2"])
+  generateProgressBars([0,0],["first-progress-2", "second-progress-2"])
 });
 //-----------------------------------------------------------------------
 

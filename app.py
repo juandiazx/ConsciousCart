@@ -3,7 +3,6 @@ from flask_cors import CORS
 from joblib import load
 from biodegradable import calculate_normalized_good_score_and_list_materials
 from harmscore import calculate_normalized_harmfulness_score_and_list_materials
-from brandscore import brand_score
 
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
