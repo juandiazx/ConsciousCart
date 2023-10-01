@@ -36,13 +36,9 @@ def hello_world():
             if safety == 0:
                 safety = 30
             elif safety == 20:
-                safety = 40
+                safety = 50
             elif safety == 40:
-                safety = 60
-            elif safety == 60:
-                safety = 70
-            elif safety == 80:
-                safety = 80
+                safety = 75
             else:
                 safety = 90
             env = int(env * 100)
