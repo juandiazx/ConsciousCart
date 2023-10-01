@@ -4,7 +4,6 @@
 //-----------------------------------------------------------------------
 // ()------>JSON{action:"scrapeData"} -----> content.js
 //-----------------------------------------------------------------------
-
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('scrape_button').addEventListener('click', function () {
 
