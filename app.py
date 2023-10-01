@@ -32,25 +32,21 @@ def hello_world():
             env = sent_score * 2.5
             if env >= 1:
                 env = 0.99
-            safety = bio_score - 2*harm_score
-            if safety <= -2:
-                safety = 0.2
-            elif safety <= -1:
-                safety = 0.3
-            elif safety <= 0:
-                safety = 0.45
-            elif safety <= 1:
-                safety = 0.55
-            elif safety <= 2:
-                safety = 0.65
-            elif safety <= 3:
-                safety = 0.75
-            elif safety <= 4:
-                safety = 0.85
-            else:
-                safety = 0.95
-            env = int(env * 100)
+            safety = bio_score
             safety = int(safety * 100)
+            if safety == 0:
+                safety = 30
+            elif safety == 20:
+                safety = 40
+            elif safety == 40:
+                safety = 60
+            elif safety == 60:
+                safety = 70
+            elif safety == 80:
+                safety = 80
+            else:
+                safety = 90
+            env = int(env * 100)
             return jsonify({'env_score': env, 'safety_score': safety})
         except Exception as e:
             return jsonify({'error': str(e)}), 500  # Return the error message with 500 status code
