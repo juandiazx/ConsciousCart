@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'showDataFinal') {
-    const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Harm Score: ${request.data.harm_score}`
+    const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
     document.getElementById('result').textContent = resultText;
     //generateProgressBars([15,70],["first-progress-1", "second-progress-1"])
   }
