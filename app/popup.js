@@ -85,23 +85,39 @@ function generateProgressBars(percentagesArray,arrayIds) {
     // Calculate the dash offset to represent the percentage
     let offset = circumference - (percentagesArray[i] / 100) * circumference;
     // Define colors based on percentage
-    let color;
+    let color = "green";
     if (percentagesArray[i] >= 60) {
-        color = '#4CAF50 !important'; // Green color for >= 60%
+        color = 'green'; // Green color for >= 60%
     } else if (percentagesArray[i] >= 20) {
-        color = '#FFC107 !important'; // Orange color for 20% to 60%
-    } else {
-        color = '#FF5722 !important'; // Red color for < 20%
+        color = 'orange'; // Orange color for 20% to 60%
+    } else if(percentagesArray[i] != 0) {
+        color = 'red'; // Red color for < 20%
     }
 
-    // Set the stroke color and dash offset
-    circle.style.stroke = color;
     // Set the stroke-dasharray property to the full circumference
     circle.style.strokeDasharray = circumference;
 
     // Set the stroke-dashoffset property to create the progress effect
     circle.style.strokeDashoffset = offset;
-
+    // Set the stroke color and dash offset
+    circle.classList.add(color)
+    switch (color) {
+      case "red":
+        circle.classList.remove("orange")
+        circle.classList.remove("green")
+        // Código a ejecutar si la expresión es igual a valor1
+        break;
+      case "orange":
+        circle.classList.remove("red")
+        circle.classList.remove("green")
+        // Código a ejecutar si la expresión es igual a valor2
+        break;
+      case "green":
+        circle.classList.remove("red")
+        circle.classList.remove("orange")
+        break;
+      // Puedes tener más casos aquí
+    }
     // Set the percentage text and position it at the center
     percentText.textContent = `${percentagesArray[i]}%`;
   }
@@ -137,12 +153,12 @@ homeButton.addEventListener('click', () => {
         // Create a new span element
         var newSpan = document.createElement('span');
         newSpan.className = 'bold-words'; // Apply the same class as the existing span elements
-        newSpan.textContent = 'social';
+        newSpan.textContent = 'environmental';
 
         // Create another new span element
         var anotherNewSpan = document.createElement('span');
         anotherNewSpan.className = 'bold-words'; // Apply the same class as the existing span elements
-        anotherNewSpan.textContent = 'environmental';
+        anotherNewSpan.textContent = 'health';
 
         // Replace the content of the h1 element with the new spans and text
         h1Element.innerHTML = 'Automatically checks the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of your current online product';
@@ -163,12 +179,12 @@ pasteButton.addEventListener('click', () => {
         // Create a new span element
         var newSpan = document.createElement('span');
         newSpan.className = 'bold-words'; // Apply the same class as the existing span elements
-        newSpan.textContent = 'social';
+        newSpan.textContent = 'environmental';
 
         // Create another new span element
         var anotherNewSpan = document.createElement('span');
         anotherNewSpan.className = 'bold-words'; // Apply the same class as the existing span elements
-        anotherNewSpan.textContent = 'environmental';
+        anotherNewSpan.textContent = 'health';
 
         // Replace the content of the h1 element with the new spans and text
         h1Element.innerHTML = 'Check the ' + newSpan.outerHTML + ' and ' + anotherNewSpan.outerHTML + ' score of any online product description';

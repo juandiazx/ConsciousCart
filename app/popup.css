@@ -101,6 +101,18 @@ header {
     stroke-dashoffset: 314;
     transition: stroke-dashoffset 1s;
   }
+
+  .red{
+    stroke: red !important;
+  }
+
+  .green{
+    stroke: var(--main-color) !important;
+  }
+
+  .orange {
+    stroke: orange !important;
+  }
   
 
   .progress-ring-text {
