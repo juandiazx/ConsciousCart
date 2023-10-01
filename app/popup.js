@@ -36,8 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
 //-----------------------------------------------------------------------
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'showDataFinal') {
-    //const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
-    document.getElementById('result').textContent = request.data.title;
+    const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Harm Score: ${request.data.harm_score}`
+    document.getElementById('result').textContent = resultText;
+    //generateProgressBars([15,70],["first-progress-1", "second-progress-1"])
   }
 });
 //-----------------------------------------------------------------------
@@ -51,6 +52,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     //const resultText = `Sentiment Score: ${request.data.sent_score}, Bio Score: ${request.data.bio_score}, Materials: ${request.data.materials.join(', ')}, Harm Score: ${request.data.harm_score}, Chemicals: ${request.data.chemicals.join(', ')}`
     const resultText = request.data.description
     document.getElementById('result').textContent = resultText;
+    //generateProgressBars([15,70],["first-progress-2", "second-progress-2"])
   }
 });
 //-----------------------------------------------------------------------

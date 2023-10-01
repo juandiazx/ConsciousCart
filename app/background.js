@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
         title: request.data.title,
         about: request.data.about
       };
-/*
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         body: JSON.stringify(data),
@@ -39,13 +39,13 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
           'Content-Type': 'application/json'
         }
       });
-*/
-      //if (response.ok) {
-        //const responseData = await response.json();
-        await chrome.runtime.sendMessage({action: "showDataFinal", data: data});
-      //} else {
-        //console.error("Error fetching data from Flask server:", await response.text());
-      //}
+
+      if (response.ok) {
+        const responseData = await response.json();
+        await chrome.runtime.sendMessage({action: "showDataFinal", data: responseData});
+      } else {
+        console.error("Error fetching data from Flask server:", await response.text());
+      }
     } catch (error) {
       console.error(error);
     }
