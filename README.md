@@ -8,6 +8,7 @@ Then download the whole project, use pip in order to start the needed libraries 
 Now you can go to https://www.amazon.com/ in order to test the automatic scorer functionality or you can copy any product description from the internet into the description scorer functionality.
 
 
+
 Made with ❤ by Robert Oratorio, Shravan Cheekati and Juan Diaz
 
 
