@@ -32,7 +32,9 @@ excluded_materials = {
     "tetrachlorodibenzo", "thiotepa", "thorium", "tobacco", "ortho", "toluidine", "treosulfan", 
     "trichloroethylene", "uvradiation", "tanning", 
     "chloride", "fumes", "woodchip", "bleach", "insecticisde", "pesticide", "kill", "killer",
-    "killing", "damage", "damaging", "poison", "poisonous", "poisoning", "harm", "harmful", "harmfulness"
+    "killing", "damage", "damaging", "poison", "poisonous", "poisoning", "harm", "harmful", "harmfulness","cellophane","BPA",
+    "epoxy","aluminum","teflon","perfumes","shampoo","deodorant","cookies","frozen","cereal","soda","alcohol","cleaning","acid","cookie","snack",
+    "sugar"
 }
 def calculate_normalized_harmfulness_score_and_list_materials(
     text: str, 
