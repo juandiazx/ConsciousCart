@@ -11,6 +11,6 @@ Now you can go to https://www.amazon.com/ in order to test the automatic scorer 
 
 
 
-Made with ❤ by Robert Oratorio, Shravan Cheekati and Juan Diaz
+Made with ❤ by Robert Oratorio, Shravan Cheekati and Juan Diaz at Robinhood Hackathon for Social Good
 
 
