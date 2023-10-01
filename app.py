@@ -13,17 +13,22 @@ def hello_world():
     if request.method == 'POST':
         try:
             data = request.get_json(force=True)  # Explicitly set content type
-            title = data.get('title', '')
-            about = data.get('about', '')
+            text_content = ''
+            if data.get('title', '') != '':
+                title = data.get('title', '')
+                about = data.get('about', '')
+                text_content = title + about
+            else:
+                text_content = data.get('description', '')
 
             clf = load('sentiment_logistic_regression_model.joblib')
             tfidf_vectorizer = load('sentiment_tfidf_vectorizer.joblib')
 
-            sentence_tfidf = tfidf_vectorizer.transform([title + about])
+            sentence_tfidf = tfidf_vectorizer.transform([text_content])
             probabilities = clf.predict_proba(sentence_tfidf)
             sent_score = str(probabilities[0][1])
-            bio_score, materials = calculate_normalized_good_score_and_list_materials(title + about)
-            harm_score, chemicals = calculate_normalized_harmfulness_score_and_list_materials(title + about)
+            bio_score, materials = calculate_normalized_good_score_and_list_materials(text_content)
+            harm_score, chemicals = calculate_normalized_harmfulness_score_and_list_materials(text_content)
             return jsonify({'sent_score': sent_score, 'bio_score': bio_score, 'materials': list(materials),
                             'harm_score': harm_score, 'chemicals': list(chemicals)})
         except Exception as e:
