@@ -31,9 +31,9 @@ def hello_world():
             env = sent_score * 2.5
             if env >= 1:
                 env = 0.99
-            safety = bio_score - 4*harm_score
+            safety = 2*bio_score - 3*harm_score
             safety = int(safety * 100)
-            if safety <= 10:
+            if safety <= 5:
                 safety = 10
             elif safety <=35:
                 safety = 40
