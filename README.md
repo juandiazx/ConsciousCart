@@ -1,5 +1,5 @@
-# ConsciousCart
-**Making online shopping more sustainable and humane**
+# ConsciousCart - Making online shopping more sustainable and humane
+**Chrome Extension which uses Machine Learning to help you make conscious decisions when you shop online**
 
 To test it on your local machine, download the app folder, go to chrome://extensions/ and upload it.
 
